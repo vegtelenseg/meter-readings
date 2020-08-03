@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "Awesome project developed with TypeORM.",
+  "devDependencies": {
+    "@types/d3": "^5.7.2",
+    "@types/node": "^8.0.29",
+    "ts-node": "3.3.0",
+    "typescript": "3.3.3333"
+  },
+  "dependencies": {
+    "apollo-server": "^2.16.0",
+    "csv-load-sync": "^1.0.0",
+    "csv-parser": "^2.3.3",
+    "graphql": "^15.3.0",
+    "pg": "^7.3.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.0.0-rc.3",
+    "typeorm": "0.2.25",
+    "typeorm-seeding": "^1.6.1"
+  },
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "seed:config": "ts-node ./node_modules/typeorm-seeding/dist/cli.js config",
+    "seed": "ts-node ./node_modules/typeorm-seeding/dist/cli.js seed",
+    "rollback": "ts-node ./node_modules/typeorm/cli.js schema:drop",
+    "update-schema": "./node_modules/.bin/ts-node ./node_modules/.bin/typeorm migration:generate -n init",
+    "migrate": "ts-node ./node_modules/typeorm/cli.js schema:sync"
+  }
+}
