@@ -26,3 +26,4 @@ A webapp designed to search for a meter and to visualize its consumption for WH 
 - Add environment variables for database configuration
 - Improve how FE queries the BE (Debouncing input, Adding submit button)
 - Improve querying strategy (Paginate data)
+- Add Unit tests for logic and automated test for UI

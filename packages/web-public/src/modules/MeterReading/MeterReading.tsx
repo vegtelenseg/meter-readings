@@ -14,7 +14,7 @@ import { scaleBand } from "@devexpress/dx-chart-core";
 import { ArgumentScale, Stack } from "@devexpress/dx-react-chart";
 import { gql, useQuery } from "@apollo/client";
 // TODO: Import separately
-import { Input, Box, Container } from "@material-ui/core";
+import { Input, Box, Container, Typography } from "@material-ui/core";
 
 const getMode = (zoom: boolean, pan: boolean) => {
   if (zoom && pan) {
@@ -136,7 +136,7 @@ export const MeterReadingLineChart = () => {
             placeholder="Enter full meter number..."
           />
         </Box>
-        {dataToDisplay && (
+        {dataToDisplay ? (
           <Box mx={5}>
             <Chart
               data={dataToDisplay.splice(0, 100)}
@@ -162,6 +162,16 @@ export const MeterReadingLineChart = () => {
               <EventTracker />
               <Tooltip />
             </Chart>
+          </Box>
+        ) : (
+          <Box m={5}>
+            <Typography variant="h4" color="primary">
+              {`${
+                searchInput.length > 0
+                  ? "Hmm...your search phrase did not match any meter serial numbers in our records"
+                  : "Enter a meter serial number in the top-left input box in order to see readings"
+              }`}
+            </Typography>
           </Box>
         )}
       </Paper>
