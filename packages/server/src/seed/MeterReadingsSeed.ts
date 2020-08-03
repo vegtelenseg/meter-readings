@@ -4,7 +4,7 @@ import { MeterReadingEntity } from "../entity/MeterReadingEntity";
 import * as path from "path";
 import { MeterEntity } from "../entity/MeterEntity";
 import * as _ from "lodash";
-var load = require("csv-load-sync");
+import * as load from "csv-load-sync";
 
 const FILE_PATH = path.join(__dirname, "metering_data.csv");
 
