@@ -9,7 +9,7 @@
     "typescript": "3.3.3333"
   },
   "dependencies": {
-    "apollo-server": "^2.16.0",
+    "apollo-server": "^2.25.4",
     "csv-load-sync": "^1.0.0",
     "csv-parser": "^2.3.3",
     "graphql": "^15.3.0",
